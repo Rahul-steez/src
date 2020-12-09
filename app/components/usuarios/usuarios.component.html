@@ -1,0 +1,24 @@
+<!-- <div class="container">
+  <div class="row mt-3">
+
+    <div class="col">
+      <div class="list-group">
+        <a *ngFor="let character of UsuarioArray" class="list-group-item list-group-item-action"
+          (click)="selectUsuario(Usuario)">{{character.nom}}</a>
+      </div>
+
+      <br>
+      
+      <button type="button" class="btn btn-info" (click)="isCreatingNewChar = true">Add USuario</button>
+    </div>
+
+    <div *ngIf="isCreatingNewChar === false" class="col">
+      <app-character [character]="UsuarioSelected" (saveEvent)="updateUsuario($event)"
+        (deleteEvent)="deleteUsuario($event)"></app-character>
+    </div>
+
+    <div *ngIf="isCreatingNewChar === true" class="col">
+      <app-new-character (characterEvent)="addUsuario($event)"></app-new-character>
+    </div>
+  </div>
+</div> -->

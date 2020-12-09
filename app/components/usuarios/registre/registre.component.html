@@ -1,0 +1,44 @@
+<form #itemForm="ngForm" (ngSubmit)="onFormSubmit(itemForm)">
+
+  <div class="form-group">
+    <label for="nom">Nom:</label>
+    <input type="text" class="form-control" id="nom" name="nom" ngModel required>
+  </div>
+
+  <div class="form-group">
+    <label for="cognom">Cognom:</label>
+    <input type="text" class="form-control" id="cognom" name="cognom" ngModel required>
+  </div>
+
+  <div class="form-group">
+    <label for="edat">Edat:</label>
+    <input type="number" class="form-control" id="edat" name="edat" ngModel required>
+  </div>
+
+  <div class="form-group">
+    <label for="foto">Foto:</label>
+    <input type="number" accept="image/png, image/jpeg" class="form-control" id="foto" name="foto" ngModel required>
+  </div>
+
+  <div class="form-group">
+    <label for="descripcion">Descripcion:</label>
+    <input type="text" class="form-control" id="descripcion" name="descripcion" ngModel required>
+  </div>
+
+  <div class="form-group">
+    <label for="correu">Correu:</label>
+    <input type="email" class="form-control" id="correu" name="correu" ngModel required>
+  </div>
+
+  <div class="form-group">
+    <label for="contrasenya">Contrasenya:</label>
+    <input type="password" class="form-control" id="contrasenya" name="contrasenya" ngModel required>
+  </div>
+
+  <div class="form-group">
+    <label for="confirmarcontrasenya"> Confirmar Contrasenya:</label>
+    <input type="password" class="form-control" id="confirmarcontrasenya" name="confirmarcontrasenya" ngModel required>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="itemForm.invalid">Submit</button>
+</form>

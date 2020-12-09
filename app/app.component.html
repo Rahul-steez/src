@@ -1,0 +1,32 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<div class="container">
+    <div class="row mt-3">
+
+      <div class="col">
+        <div class="list-group">
+          <a *ngFor="let character of UsuarioArray" class="list-group-item list-group-item-action"
+            (click)="selectUsuario(character)">{{character.nom}}</a>
+        </div>
+        <br>
+        <button type="button" class="btn btn-info" (click)="isCreatingNewChar = true">Add Usuario</button>
+      </div>
+
+      <div>
+      <button type="button" class="btn btn-info" (click)="iscreatingAdmin = false">Admin</button> 
+      </div>
+
+      <div *ngIf="iscreatingAdmin === true" class="col">
+        <app-admin></app-admin>
+      </div>
+
+      <div *ngIf="isCreatingNewChar === false" class="col">
+        <app-info [character]="UsuarioSelected" (saveEvent)="updateUsuario($event)"
+          (deleteEvent)="deleteUsuario($event)"></app-info>
+      </div>
+
+      <div *ngIf="isCreatingNewChar === true" class="col">
+        <app-registre (characterEvent)="addUsuario($event)"></app-registre>
+      </div>
+    </div>
+  </div>
